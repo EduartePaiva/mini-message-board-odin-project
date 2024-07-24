@@ -1,7 +1,6 @@
-const js = require("@eslint/js");
-
-const config = [
-    js.configs.recommended,
+// eslint.config.js
+/** @type {import("eslint").Linter.Config} */
+module.exports = [
     {
         languageOptions: {
             sourceType: "commonjs",
@@ -12,4 +11,3 @@ const config = [
         },
     },
 ];
-module.exports = config;
