@@ -7,12 +7,19 @@
         <link rel="stylesheet" href="/styles.css" />
     </head>
     <body class="index">
+        <h1>Mini Message Board</h1>
+        <a href="/new">
+            <button style="cursor: pointer;">Create a new Message</button>
+        </a>
         <% for (let i = 0; i < messages.length; i++) { %>
         <hr class="solid" />
         <li>
             <span>User: <%= messages[i].user %></span>
             <span>Text: <%= messages[i].text %></span>
             <span>Date: <%= messages[i].added %></span>
+            <a href="/open/<%= i %>">
+                <button style="cursor: pointer;">More details</button>
+            </a>
         </li>
         <hr class="solid" />
         <% } %>

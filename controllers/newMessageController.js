@@ -12,8 +12,11 @@ const newMessageControllerGet = (req, res) => {
  * @param {import("express").Response} res
  */
 const newMessageControllerPost = (req, res) => {
-    // body: { author: 'Eduarte', message: 'Hello from Brazil' }
-    console.log(req.body);
+    req.app.messages.unshift({
+        text: req.body.message,
+        user: req.body.author,
+        added: new Date(),
+    });
     res.redirect("/");
 };
 
